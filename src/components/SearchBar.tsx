@@ -15,6 +15,7 @@ function SearchBar() {
     <div>
       <input type="text" onChange={(e) => setInputValue(e.target.value)} />
       <button onClick={handleClick}>Search</button>
+      {data.status === "idle" && <p>Enter a username</p>}
       {data.status === "error" && <p>Not Found</p>}
       {data.status === "loading" && <p>Loading...</p>}
       {data.status === "success" && (
