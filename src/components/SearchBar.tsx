@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useGitHubUser } from "../hooks/useGitHubUser";
 import UserCard from "./UserCard";
+import ListRepos from "./ListRepos";
+import { useGitHubRepos } from "../hooks/useGitHubRepos";
 
 function SearchBar() {
   const [search, setSearch] = useState("");
   const [inputValue, setInputValue] = useState("");
 
   const data = useGitHubUser(search);
+  const repos = useGitHubRepos(search);
 
   const handleClick = () => {
     setSearch(inputValue);
@@ -26,6 +29,33 @@ function SearchBar() {
           followers={data.data.followers}
           html_url={data.data.html_url}
         />
+      )}
+
+      {repos.status === "success" && (
+        <table className="list">
+          <thead>
+            List of Repositories
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>DESCRIPTION</th>
+              <th>WACTHERS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {repos.data.map((repo) => {
+              return (
+                <ListRepos
+                  key={repo.id}
+                  id={repo.id}
+                  name={repo.name}
+                  description={repo.description}
+                  watchers_count={repo.watchers_count}
+                />
+              );
+            })}
+          </tbody>
+        </table>
       )}
     </div>
   );

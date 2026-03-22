@@ -37,3 +37,8 @@ export type GitHubUpdate = Partial<GitHubUser>;
 export type GitHubPublic = Omit<GitHubUser, "following" | "created_at">;
 
 export type GitHubCache = Record<string, GitHubUserPreview>;
+
+export type GitHubReposPreview = Pick<
+  GitHubRepo,
+  "id" | "name" | "description" | "watchers_count"
+>;
