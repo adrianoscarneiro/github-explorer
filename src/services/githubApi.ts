@@ -1,10 +1,16 @@
 import type { GitHubUser, AsyncState, GitHubRepo } from "../types/github";
 
+const headers = {
+  Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+};
+
 export async function fetchGitHubUser(
   username: string,
 ): Promise<AsyncState<GitHubUser>> {
   try {
-    const res = await fetch(`https://api.github.com/users/${username}`);
+    const res = await fetch(`https://api.github.com/users/${username}`, {
+      headers,
+    });
     const data = await res.json();
 
     if (!res.ok) {

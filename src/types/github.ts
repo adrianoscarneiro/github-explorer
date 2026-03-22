@@ -26,3 +26,14 @@ export type AsyncState<T> =
   | { status: "loading" }
   | { status: "success"; data: T }
   | { status: "error"; message: string };
+
+export type GitHubUserPreview = Pick<
+  GitHubUser,
+  "login" | "avatar_url" | "html_url" | "bio" | "followers"
+>;
+
+export type GitHubUpdate = Partial<GitHubUser>;
+
+export type GitHubPublic = Omit<GitHubUser, "following" | "created_at">;
+
+export type GitHubCache = Record<string, GitHubUserPreview>;

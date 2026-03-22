@@ -1,10 +1,12 @@
 import "./App.css";
-import UserCard from "./components/UserCard";
+import SearchBar from "./components/SearchBar";
 
 function App() {
-  const username = "adrianoscarneiro";
-
-  return <UserCard username={username} />;
+  return (
+    <>
+      <SearchBar />
+    </>
+  );
 }
 
 export default App;
