@@ -20,7 +20,7 @@ function SearchBar() {
         <h1 className="text-white text-3xl font-bold text-center">
           GitHub Explorer
         </h1>
-        <p className="text-gray-400 text-sm text-center mb-1 ms-1 me-1">
+        <p className="text-gray-400 text-xs text-center mb-1 ms-1 me-1">
           Search for GitHub profiles and repositories.
         </p>
         <input
@@ -51,12 +51,12 @@ function SearchBar() {
           />
         )}
         {repos.status === "success" && (
-          <div className=" text-[#8b949e] rounded-2xl my-2 px-2">
+          <div className=" text-[#8b949e] rounded-2xl my-2 px-2 w-full">
             <h2 className="text-[#acb8c5] text-lg font-bold bg-[#21262d] rounded-sm">
               Repositories
             </h2>
             <div className="overflow-y overflow-y-scroll h-100 no-scrollbar">
-              <table className="text-center table border-separate border-spacing-y-1 border-spacing-x-1">
+              <table className="text-center table border-separate border-spacing-y-1 border-spacing-x-1 w-full">
                 <thead className="text-center content-center text-xs text-[#21262d] bg-[#E5F0FF] sticky top-0">
                   <tr>
                     <th>Id</th>
