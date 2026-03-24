@@ -2,10 +2,14 @@
 
 A React + TypeScript app for searching GitHub profiles and repositories.
 
+## Live Demo
+
+[github-explorer-eosin-nu.vercel.app](https://github-explorer-eosin-nu.vercel.app)
+
 ## Tech Stack
 
 - React 18 + TypeScript (strict)
-- Vite
+- Vite + Tailwind CSS
 - GitHub REST API
 
 ## Key decisions
@@ -14,6 +18,7 @@ A React + TypeScript app for searching GitHub profiles and repositories.
 - Used a discriminated union type for AsyncState (loading | success | error | idle)
   instead of multiple booleans, which avoids impossible states
 - Custom hook useGitHubUser separates data fetching logic from UI components
+- GitHubUserPreview utility type (Pick) ensures components only receive what they need
 
 ## Running locally
 
