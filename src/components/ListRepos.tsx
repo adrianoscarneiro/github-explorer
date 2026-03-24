@@ -1,17 +1,20 @@
 import type { GitHubReposPreview } from "../types/github";
 
 function ListRepos({
-  id,
+  language,
   name,
   description,
-  watchers_count,
+  stars,
+  html_url,
 }: GitHubReposPreview) {
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{name}</td>
-      <td>{description}</td>
-      <td>{watchers_count}</td>
+    <tr className="bg-[#21262d] text-xs text-[#e6edf3] ">
+      <td className="py-2 px-1 rounded-sm">{language}</td>
+      <td className="py-2 px-1 rounded-sm">
+        <a href={html_url}>{name}</a>
+      </td>
+      <td className="py-2 px-1 rounded-sm">{description}</td>
+      <td className="py-2 px-1 rounded-sm">{stars}</td>
     </tr>
   );
 }

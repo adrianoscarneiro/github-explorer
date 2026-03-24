@@ -1,12 +1,4 @@
 import type { GitHubUserPreview } from "../types/github";
-import React from "react";
-
-const userCardStyle: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  padding: 15,
-  margin: 20,
-};
 
 function UserCard({
   login,
@@ -16,12 +8,25 @@ function UserCard({
   html_url,
 }: GitHubUserPreview) {
   return (
-    <div style={userCardStyle}>
-      <img src={avatar_url} alt={`This is ${login}'s avatar`} />
-      <div>{login}</div>
-      <div>{bio}</div>
-      <div>{followers}</div>
-      <div>{html_url}</div>
+    <div className="flex flex-col items-center my-1 w-85">
+      <img
+        src={avatar_url}
+        alt={`This is ${login}'s avatar`}
+        className="rounded-full w-40 h-40 object-cover"
+      />
+      <div className="flex flex-col text-xs w-auto">
+        Username: <div className="bg-[#E5F0FF] p-2 m-1 rounded-lg">{login}</div>
+        Followers:{" "}
+        <div className="bg-[#E5F0FF] p-2 m-1 rounded-lg">{followers}</div>
+        Profile:{" "}
+        <div className="bg-[#E5F0FF] p-2 m-1 rounded-lg">
+          <a href={html_url}>{html_url}</a>
+        </div>
+        Bio:{" "}
+        <div className="bg-[#E5F0FF] p-2 m-1 rounded-lg">
+          {bio ? bio : "N/A"}
+        </div>
+      </div>
     </div>
   );
 }

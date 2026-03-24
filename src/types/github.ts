@@ -15,10 +15,11 @@ export interface GitHubRepo {
   id: number;
   name: string | null;
   description: string | null;
-  watchers_count: number;
+  stars: number;
   visibility: string;
   stargazers_count: number;
   language: string | null;
+  html_url: string;
 }
 
 export type AsyncState<T> =
@@ -40,5 +41,5 @@ export type GitHubCache = Record<string, GitHubUserPreview>;
 
 export type GitHubReposPreview = Pick<
   GitHubRepo,
-  "id" | "name" | "description" | "watchers_count"
+  "language" | "name" | "description" | "stars" | "html_url"
 >;

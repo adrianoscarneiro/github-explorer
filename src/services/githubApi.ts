@@ -28,7 +28,7 @@ export async function fetchGitHubRepo(
 ): Promise<AsyncState<GitHubRepo[]>> {
   try {
     const response = await fetch(
-      `https://api.github.com/users/${username}/repos`,
+      `https://api.github.com/users/${username}/repos?per_page=200&page=1`,
     );
     const data = await response.json();
 
