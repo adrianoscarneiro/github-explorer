@@ -20,19 +20,23 @@ function SearchBar() {
         <h1 className="text-white animate-pulse text-3xl font-bold text-center text-[clamp(2rem,4vw,4rem)] text-bold tracking-widest subpixel-antialiased">
           Git Explorer
         </h1>
-        <p className="text-gray-400 text-center ms-1 me-1 text-[clamp(1.5rem,1vw,2.5rem)]">
+        <p className="text-gray-400 font-light text-center ms-1 me-1 text-[clamp(0.8rem,3vw,2rem)]">
           Search for GitHub profiles and repositories.
         </p>
-        <div className="flex flex-col items-center sm:flex-row sm:justify-center lg:flex-row lg:justify-center">
+        <div className="flex flex-col w-full items-center sm:flex-row sm:justify-center lg:flex-row lg:justify-center">
           <input
-            type="text"
+            type="search"
+            aria-label="search"
+            aria-invalid="false"
+            autoCapitalize="none"
             onChange={(e) => setInputValue(e.target.value)}
-            className="bg-[#21262d] rounded-lg w-35 text-[#8b949e] box-border border text-sm mt-2 mb-2 ms-1 me-1 ps-2 py-0.5 text-[clamp(1rem,3vw,1rem)]"
-            place-holder="Enter a username"
+            className="bg-[#21262d] rounded-lg w-70 text-[#8b949e] box-border border-1/2 text-sm mt-2 mb-2 ms-1 me-1 ps-2 py-0.5 text-[clamp(0.8rem,3vw,1rem)] placeholder:text-xs focus:outline-none "
+            placeholder="Enter a username"
+            spellCheck="false"
           />
           <button
             onClick={handleClick}
-            className="bg-[#45515f] rounded-lg w-15 text-[#8b949e] text-[clamp(1rem,2vw,1.5rem)]"
+            className="bg-[#45515f] rounded-lg w-18 py-1 text-[#8b949e] text-[clamp(0.6rem,1vw,1.5rem)]"
           >
             Search
           </button>
@@ -56,27 +60,25 @@ function SearchBar() {
             html_url={data.data.html_url}
           />
 
-          <div className=" text-[#8b949e] rounded-2xl my-2 w-full top-0 sticky">
-            <div className="text-[#acb8c5] font-bold bg-[#21262d] text-[clamp(1rem,4vw,1.5rem)] rounded-2xl mb-1">
+          <div className=" text-[#8b949e] rounded-2xl my-2 w-full">
+            <div className="text-[#acb8c5] font-light bg-[#21262d] text-[clamp(1rem,2vw,1.5rem)] rounded-2xl py-1 mb-1">
               Repositories
             </div>
-            <div className="overflow-y overflow-y-scroll overflow-x-hidden sm:h-100 w-full max-h-screen rounded-lg">
+            <div className="overflow-y overflow-y-scroll overflow-x-hidden sm:h-100 w-full max-h-screen rounded-lg px-1">
               <table className="text-center table-fixed w-full h-auto table border-separate border-spacing-y-[0.1rem] border-spacing-x-[0.1rem]">
-                <thead className="text-center content-center text-[clamp(1rem,3vw,1.5rem)] text-[#21262d] bg-[#E5F0FF] sticky top-0">
-                  <tr>
-                    <th className="whitespace-normal wrap-break-words w-1/4">
-                      Language
-                    </th>
-                    <th className="wrap-break-words w-1/4 text-break-all">
-                      Name
-                    </th>
-                    <th className="whitespace-normal wrap-break-words w-1/2 text-break-all">
-                      Description
-                    </th>
-                    <th className="whitespace-normal wrap-break-words w-1/10">
-                      Stars
-                    </th>
-                  </tr>
+                <thead className="text-center content-center text-[clamp(0.8rem,2vw,1.5rem)] text-[#b1b1b1] ">
+                  <th className="whitespace-normal wrap-break-words w-1/5 font-semibold">
+                    Language
+                  </th>
+                  <th className="wrap-break-words w-1/5 text-break-all font-semibold">
+                    Name
+                  </th>
+                  <th className="whitespace-normal wrap-break-words w-1/2 text-break-all font-semibold">
+                    Description
+                  </th>
+                  <th className="whitespace-normal wrap-break-words w-1/10 font-semibold">
+                    Stars
+                  </th>
                 </thead>
 
                 <tbody className="">
