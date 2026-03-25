@@ -8,7 +8,7 @@ function ListRepos({
   html_url,
 }: GitHubReposPreview) {
   return (
-    <tr className="bg-[#21262d] text-[#e6edf3] text-[clamp(0.6rem,1vw,0.4rem)]">
+    <tr className="bg-[#21262d] text-[#e6edf3] text-[clamp(1rem,1vw,1.5rem)]">
       <td className="py-2 px-1 rounded-sm whitespace-normal wrap-break-words">
         {language}
       </td>

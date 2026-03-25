@@ -17,7 +17,7 @@ function UserCard({
         />
       </div>
 
-      <div className="flex flex-col flex-wrap w-50 text-xs text-[clamp(0.7rem,2vw,1rem)]">
+      <div className="flex flex-col flex-wrap w-60 text-xs text-[clamp(1rem,1vw,2rem)]">
         <div>
           Username
           <div className="bg-[#E5F0FF] p-1 m-1 rounded-lg ">{login}</div>

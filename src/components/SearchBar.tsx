@@ -17,22 +17,22 @@ function SearchBar() {
   return (
     <div className="text-[#8b949e] container justify-items-center flex flex-col w-full p-2">
       <div className="mt-4 mb-4 flex flex-col items-center h-auto md:pt-20">
-        <h1 className="text-white animate-pulse text-3xl font-bold text-center text-[clamp(1.5rem,4vw,2.5rem)] text-bold tracking-widest subpixel-antialiased">
+        <h1 className="text-white animate-pulse text-3xl font-bold text-center text-[clamp(1.5rem,4vw,2rem)] text-bold tracking-widest subpixel-antialiased">
           Git Explorer
         </h1>
-        <p className="text-gray-400 text-center ms-1 me-1 text-[clamp(0.6rem,2vw,1rem)]">
+        <p className="text-gray-400 text-center ms-1 me-1 text-[clamp(1rem,2vw,2rem)]">
           Search for GitHub profiles and repositories.
         </p>
         <div className="flex flex-col items-center sm:flex-row sm:justify-center lg:flex-row lg:justify-center">
           <input
             type="text"
             onChange={(e) => setInputValue(e.target.value)}
-            className="bg-[#21262d] rounded-lg w-35 text-[#8b949e] box-border border text-sm mt-2 mb-2 ms-1 me-1 ps-2 py-0.5 text-[clamp(0.5rem,3vw,1rem)]"
+            className="bg-[#21262d] rounded-lg w-35 text-[#8b949e] box-border border text-sm mt-2 mb-2 ms-1 me-1 ps-2 py-0.5 text-[clamp(1rem,3vw,1rem)]"
             place-holder="Enter a username"
           />
           <button
             onClick={handleClick}
-            className="bg-[#45515f] rounded-lg w-15 text-[#8b949e] text-[clamp(0.6rem,2vw,1rem)]"
+            className="bg-[#45515f] rounded-lg w-15 text-[#8b949e] text-[clamp(1rem,2vw,1.5rem)]"
           >
             Search
           </button>
@@ -57,12 +57,12 @@ function SearchBar() {
           />
 
           <div className=" text-[#8b949e] rounded-2xl my-2 w-full top-0 sticky">
-            <div className="text-[#acb8c5] font-bold bg-[#21262d] text-[clamp(0.7rem,4vw,1rem)] rounded-2xl mb-1">
+            <div className="text-[#acb8c5] font-bold bg-[#21262d] text-[clamp(1rem,4vw,1.5rem)] rounded-2xl mb-1">
               Repositories
             </div>
             <div className="overflow-y overflow-y-scroll overflow-x-hidden sm:h-100 w-full max-h-screen rounded-lg">
               <table className="text-center table-fixed w-full h-screen table border-separate border-spacing-y-[0.1rem] border-spacing-x-[0.1rem]">
-                <thead className="text-center content-center text-[clamp(0.7rem,3vw,1rem)] text-[#21262d] bg-[#E5F0FF] sticky top-0">
+                <thead className="text-center content-center text-[clamp(1rem,3vw,1.5rem)] text-[#21262d] bg-[#E5F0FF] sticky top-0">
                   <tr>
                     <th className="whitespace-normal wrap-break-words w-1/4">
                       Language
