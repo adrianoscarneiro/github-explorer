@@ -17,10 +17,10 @@ function SearchBar() {
   return (
     <div className="text-[#8b949e] container justify-items-center flex flex-col w-full p-2">
       <div className="mt-4 mb-4 flex flex-col items-center h-auto md:pt-20">
-        <h1 className="text-white animate-pulse text-3xl font-bold text-center text-[clamp(1.5rem,4vw,2rem)] text-bold tracking-widest subpixel-antialiased">
+        <h1 className="text-white animate-pulse text-3xl font-bold text-center text-[clamp(2rem,4vw,4rem)] text-bold tracking-widest subpixel-antialiased">
           Git Explorer
         </h1>
-        <p className="text-gray-400 text-center ms-1 me-1 text-[clamp(1rem,2vw,2rem)]">
+        <p className="text-gray-400 text-center ms-1 me-1 text-[clamp(1.5rem,1vw,2.5rem)]">
           Search for GitHub profiles and repositories.
         </p>
         <div className="flex flex-col items-center sm:flex-row sm:justify-center lg:flex-row lg:justify-center">
@@ -61,7 +61,7 @@ function SearchBar() {
               Repositories
             </div>
             <div className="overflow-y overflow-y-scroll overflow-x-hidden sm:h-100 w-full max-h-screen rounded-lg">
-              <table className="text-center table-fixed w-full h-screen table border-separate border-spacing-y-[0.1rem] border-spacing-x-[0.1rem]">
+              <table className="text-center table-fixed w-full h-auto table border-separate border-spacing-y-[0.1rem] border-spacing-x-[0.1rem]">
                 <thead className="text-center content-center text-[clamp(1rem,3vw,1.5rem)] text-[#21262d] bg-[#E5F0FF] sticky top-0">
                   <tr>
                     <th className="whitespace-normal wrap-break-words w-1/4">

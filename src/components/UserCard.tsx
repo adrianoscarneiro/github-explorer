@@ -13,11 +13,11 @@ function UserCard({
         <img
           src={avatar_url}
           alt={`This is ${login}'s avatar`}
-          className="rounded-full object-cover w-20 h-20 mb-2 md:w-40 md:h-40"
+          className="rounded-full object-cover w-25 h-25 my-2 md:w-40 md:h-40 border-gray-700 border-5"
         />
       </div>
 
-      <div className="flex flex-col flex-wrap w-60 text-xs text-[clamp(1rem,1vw,2rem)]">
+      <div className="flex flex-col content-center flex-wrap w-50 text-xs text-[clamp(1rem,1vw,2rem)]">
         <div>
           Username
           <div className="bg-[#E5F0FF] p-1 m-1 rounded-lg ">{login}</div>
