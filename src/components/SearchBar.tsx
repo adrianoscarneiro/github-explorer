@@ -15,35 +15,39 @@ function SearchBar() {
     setSearch(inputValue);
   };
   return (
-    <div className="min-h-screen text-[#8b949e] container justify-items-center flex flex-col w-full p-2">
-      <div className="mt-4 mb-4">
-        <h1 className="text-white text-3xl font-bold text-center">
-          GitHub Explorer
+    <div className="text-[#8b949e] container justify-items-center flex flex-col w-full p-2">
+      <div className="mt-4 mb-4 flex flex-col items-center h-auto md:pt-20">
+        <h1 className="text-white animate-pulse text-3xl font-bold text-center text-[clamp(1.5rem,4vw,2.5rem)] text-bold tracking-widest subpixel-antialiased">
+          Git Explorer
         </h1>
-        <p className="text-gray-400 text-xs text-center mb-1 ms-1 me-1">
+        <p className="text-gray-400 text-center ms-1 me-1 text-[clamp(0.6rem,2vw,1rem)]">
           Search for GitHub profiles and repositories.
         </p>
-        <input
-          type="text"
-          onChange={(e) => setInputValue(e.target.value)}
-          className="bg-[#21262d] rounded-lg w-50 text-[#8b949e] box-border border text-sm mt-2 mb-2 ms-1 me-1 ps-2 py-0.5"
-          place-holder="Enter a username"
-        />
-        <button
-          onClick={handleClick}
-          className="bg-[#45515f] rounded-lg w-20 text-[#8b949e]"
-        >
-          Search
-        </button>
+        <div className="flex flex-col items-center sm:flex-row sm:justify-center lg:flex-row lg:justify-center">
+          <input
+            type="text"
+            onChange={(e) => setInputValue(e.target.value)}
+            className="bg-[#21262d] rounded-lg w-35 text-[#8b949e] box-border border text-sm mt-2 mb-2 ms-1 me-1 ps-2 py-0.5 text-[clamp(0.5rem,3vw,1rem)]"
+            place-holder="Enter a username"
+          />
+          <button
+            onClick={handleClick}
+            className="bg-[#45515f] rounded-lg w-15 text-[#8b949e] text-[clamp(0.6rem,2vw,1rem)]"
+          >
+            Search
+          </button>
+        </div>
       </div>
 
       {data.status === "idle" || repos.status === "idle"}
       {data.status === "error" ||
         (repos.status === "error" && <p>Not Found</p>)}
       {data.status === "loading" ||
-        (repos.status === "loading" && <p>Loading...</p>)}
+        (repos.status === "loading" && (
+          <p className="animate-pulse">Loading...</p>
+        ))}
       {data.status === "success" && repos.status === "success" && (
-        <div className="flex flex-row bg-[#161b22] rounded-2xl w-full h-auto h-max-auto my-2 p-4">
+        <div className="flex flex-col md:flex-row bg-[#161b22] rounded-2xl w-full h-auto h-max-screen my-2 p-1">
           <UserCard
             login={data.data.login}
             bio={data.data.bio}
@@ -52,18 +56,26 @@ function SearchBar() {
             html_url={data.data.html_url}
           />
 
-          <div className=" text-[#8b949e] rounded-2xl my-2 px-2 w-full">
-            <h2 className="text-[#acb8c5] text-lg font-bold bg-[#21262d] rounded-sm">
+          <div className=" text-[#8b949e] rounded-2xl my-2 w-full top-0 sticky">
+            <div className="text-[#acb8c5] font-bold bg-[#21262d] text-[clamp(0.7rem,4vw,1rem)] rounded-2xl mb-1">
               Repositories
-            </h2>
-            <div className="overflow-y overflow-y-scroll h-100 no-scrollbar">
-              <table className="text-center table border-separate border-spacing-y-1 border-spacing-x-1 w-full">
-                <thead className="text-center content-center text-xs text-[#21262d] bg-[#E5F0FF] sticky top-0">
+            </div>
+            <div className="overflow-y overflow-y-scroll overflow-x-hidden sm:h-100 w-full max-h-screen rounded-lg">
+              <table className="text-center table-fixed w-full h-screen table border-separate border-spacing-y-[0.1rem] border-spacing-x-[0.1rem]">
+                <thead className="text-center content-center text-[clamp(0.7rem,3vw,1rem)] text-[#21262d] bg-[#E5F0FF] sticky top-0">
                   <tr>
-                    <th>Language</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Stars</th>
+                    <th className="whitespace-normal wrap-break-words w-1/4">
+                      Language
+                    </th>
+                    <th className="wrap-break-words w-1/4 text-break-all">
+                      Name
+                    </th>
+                    <th className="whitespace-normal wrap-break-words w-1/2 text-break-all">
+                      Description
+                    </th>
+                    <th className="whitespace-normal wrap-break-words w-1/10">
+                      Stars
+                    </th>
                   </tr>
                 </thead>
 
