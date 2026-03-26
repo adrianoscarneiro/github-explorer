@@ -30,7 +30,7 @@ export type AsyncState<T> =
 
 export type GitHubUserPreview = Pick<
   GitHubUser,
-  "login" | "avatar_url" | "html_url" | "bio" | "followers"
+  "login" | "avatar_url" | "html_url" | "bio" | "followers" | "location"
 >;
 
 export type GitHubUpdate = Partial<GitHubUser>;

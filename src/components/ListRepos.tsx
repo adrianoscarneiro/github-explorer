@@ -8,7 +8,7 @@ function ListRepos({
   html_url,
 }: GitHubReposPreview) {
   return (
-    <tr className="bg-[#21262d] text-[#e6edf3] text-[clamp(0.8rem,1vw,1.5rem)]">
+    <tr className="bg-[#21262d] text-[#e6edf3] text-[clamp(0.7rem,1vw,1.5rem)] md:text-[clamp(0.7rem,1vw,2rem)]">
       <td className="py-1 px-1 rounded-sm whitespace-normal wrap-break-words">
         {language}
       </td>
@@ -20,7 +20,7 @@ function ListRepos({
       <td className="py-1 px-1 rounded-sm whitespace-normal wrap-break-words">
         {description}
       </td>
-      <td className="py-1 px-1 rounded-sm">{stars}</td>
+      <td className="py-1 rounded-sm">{stars}</td>
     </tr>
   );
 }
